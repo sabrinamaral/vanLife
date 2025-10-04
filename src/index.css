@@ -37,7 +37,7 @@ main.home-hero {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 129px);
   color: #fff;
   display: flex;
   align-items: center;
@@ -45,8 +45,8 @@ main.home-hero {
 }
 
 main.home-hero .layer {
-  height: 100vh;
   width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 50%);
   position: absolute;
   top: 0;
