@@ -38,7 +38,7 @@ nav .logo {
 
 main.home-hero {
   position: relative;
-  background-image: url("src/assets/hero_picture.png");
+  background-image: url("/images/hero_picture.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
