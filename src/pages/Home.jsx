@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import ButtonCta from "../components/ButtonCta";
+
 export default function Home() {
   return (
     <main className="home-hero">
@@ -7,7 +8,7 @@ export default function Home() {
         <h2>You got the travel plans, we got the travel vans.</h2>
         <p>Add adventure to your life by joining the #vanlife movement.</p>
         <p>Rent the perfect van to make your perfect road trip.</p>
-        <Link to="/vans">Find your van</Link>
+        <ButtonCta>Find your van</ButtonCta>
       </div>
     </main>
   );

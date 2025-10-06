@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 export default function About() {
   return (
     <>
-      <img className="about-img" src="/images/about_picture.png"></img>
       <div className="about-container">
+        <img className="about-img" src="/images/about_picture.png"></img>
         <div className="about-content">
           <h1>Don’t squeeze in a sedan when you could relax in a van.</h1>
           <p>
@@ -17,7 +17,7 @@ export default function About() {
             of touring the world on 4 wheels.
           </p>
         </div>
-        <div className="cfa-container">
+        <div className="cta-container">
           <h2>Your destination is waiting.</h2>
           <h2>Your van is ready.</h2>
           <Link to="/vans">Explore our vans</Link>
