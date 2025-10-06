@@ -1,7 +1,9 @@
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer>
-      <p>Ⓒ 2022 #VANLIFE</p>
+      <p>Ⓒ {year} #VANLIFE</p>
     </footer>
   );
 }
