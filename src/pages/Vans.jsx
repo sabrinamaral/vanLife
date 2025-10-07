@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import ButtonLink from "../components/ButtonLink";
 import { colorTypes } from "../assets/btnType";
@@ -13,23 +14,26 @@ export default function Van() {
   }, []);
 
   const vanElement = data?.map((van) => {
+    let vanType = van.type.charAt(0).toUpperCase() + van.type.slice(1);
     return (
-      <div key={van.id} className="van-card">
-        <img src={van.imageUrl} />
-        <div className="van-info">
-          <p>{van.name}</p>
-          <p>
-            ${van.price}
-            <span>/day</span>
-          </p>
+      <Link to={`/vans/${van.id}`}>
+        <div key={van.id} className="van-card">
+          <img src={van.imageUrl} />
+          <div className="van-info">
+            <p>{van.name}</p>
+            <p>
+              ${van.price}
+              <span>/day</span>
+            </p>
+          </div>
+          <Button
+            color={colorTypes[van.type]?.color}
+            backgroundColor={colorTypes[van.type]?.backgroundColor}
+          >
+            {vanType}
+          </Button>
         </div>
-        <Button
-          color={colorTypes[van.type]?.color}
-          backgroundColor={colorTypes[van.type]?.backgroundColor}
-        >
-          {van.type}
-        </Button>
-      </div>
+      </Link>
     );
   });
 
