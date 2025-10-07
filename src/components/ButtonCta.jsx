@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-export default function ButtonCta({ children }) {
+export default function ButtonCta({ children, url }) {
   return (
-    <Link to="/vans" className="btn-cta">
+    <Link to={url} className="btn-cta">
       {children}
     </Link>
   );

@@ -8,7 +8,7 @@ export default function Home() {
         <h2>You got the travel plans, we got the travel vans.</h2>
         <p>Add adventure to your life by joining the #vanlife movement.</p>
         <p>Rent the perfect van to make your perfect road trip.</p>
-        <ButtonCta>Find your van</ButtonCta>
+        <ButtonCta url={"/vans"}>Find your van</ButtonCta>
       </div>
     </main>
   );
