@@ -1,3 +1,9 @@
-export default function ButtonLink({ children }) {
-  return <button className="btn-link">{children}</button>;
+import { Link } from "react-router-dom";
+
+export default function ButtonLink({ children, url }) {
+  return (
+    <Link to={url} className="btn-link">
+      {children}
+    </Link>
+  );
 }
