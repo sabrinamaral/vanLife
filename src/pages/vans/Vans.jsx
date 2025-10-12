@@ -1,23 +1,18 @@
-import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import ButtonLink from "../../components/ButtonLink";
 import { colorTypes } from "../../constants/btnType";
+import { VansContext } from "../../main";
 
 export default function Van() {
-  const [data, setData] = React.useState([]);
+  const { vans } = useContext(VansContext);
 
-  React.useEffect(() => {
-    fetch("/api/vans")
-      .then((response) => response.json())
-      .then((data) => setData(data.vans));
-  }, []);
-
-  const vanElement = data?.map((van) => {
+  const vanElement = vans?.map((van) => {
     let vanType = van.type.charAt(0).toUpperCase() + van.type.slice(1);
     return (
-      <Link to={`/vans/${van.id}`}>
-        <div key={van.id} className="van-card">
+      <Link to={`/vans/${van.id}`} key={van.id}>
+        <div className="van-card">
           <img src={van.imageUrl} />
           <div className="van-info">
             <p>{van.name}</p>
