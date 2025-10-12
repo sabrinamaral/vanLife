@@ -1,9 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Button from "../components/Button";
-import ButtonLink from "../components/ButtonLink";
-import ButtonCta from "../components/ButtonCta";
-import { colorTypes } from "../assets/btnType";
+import Button from "../../components/Button";
+import ButtonLink from "../../components/ButtonLink";
+import ButtonCta from "../../components/ButtonCta";
+import { colorTypes } from "../../constants/btnType";
 
 export default function VanDetail() {
   const params = useParams();
