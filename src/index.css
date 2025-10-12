@@ -9,6 +9,11 @@ body {
   background-color: #fff7ed;
 }
 
+button,
+a {
+  cursor: pointer;
+}
+
 /*** NAV ***/
 
 nav {
@@ -17,6 +22,8 @@ nav {
   justify-content: space-between;
   background-color: #fff7ed;
   padding: 36px 26px;
+  max-width: 820px;
+  margin: 0 auto;
 }
 
 nav a {
@@ -228,14 +235,12 @@ div.vans-filter {
   padding: 7px 26px;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
 }
 
 .btn-link {
   background-color: transparent;
   border: none;
   color: #4d4d4d;
-  cursor: pointer;
   margin-inline: 5px;
 }
 
@@ -250,6 +255,78 @@ div.vans-filter {
   margin-top: 20px;
   padding-block: 15px;
   border-radius: 5px;
+}
+
+/*** HOST ***/
+
+nav.host-layout {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.dashboard-main {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.dashboard-main a {
+  color: #161616;
+}
+
+.dashboard-welcome {
+  background-color: #ffead0;
+  padding: 37px 27px;
+}
+
+.dashboard-income-session,
+.dashboard-review-score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-income-session .income-text {
+  padding-block: 31px;
+  color: #4d4d4d;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.dashboard-welcome .income-number {
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.dashboard-income-session span {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.dashboard-review-score {
+  padding: 45px 27px;
+  background-color: #ffddb2;
+}
+
+.dashboard-review-score p {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.dashboard-review-score span {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #4d4d4d;
+}
+
+.dashboard-review-score span.score {
+  color: #161616;
+  font-weight: 600;
+}
+
+.dashboard-review-score img {
+  padding-left: 12px;
+  padding-right: 8px;
 }
 
 /*** FOOTER ***/
