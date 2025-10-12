@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Button from "../components/Button";
-import ButtonLink from "../components/ButtonLink";
-import { colorTypes } from "../assets/btnType";
+import Button from "../../components/Button";
+import ButtonLink from "../../components/ButtonLink";
+import { colorTypes } from "../../constants/btnType";
 
 export default function Van() {
   const [data, setData] = React.useState([]);
