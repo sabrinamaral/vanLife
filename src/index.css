@@ -229,6 +229,59 @@ div.vans-filter {
   font-weight: 400;
 }
 
+/*** HOST - VANCARD ***/
+
+.host-vans-list {
+  max-width: 820px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 139px;
+}
+
+.host-vans-list h2 {
+  font-size: 1.5rem;
+}
+
+.host-listed-vans {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 27px;
+  padding-top: 38px;
+  padding-bottom: 30px;
+}
+
+.host-van-card {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  padding: 33px 27px;
+  border-radius: 6px;
+}
+
+.host-van-card img {
+  max-height: 80px;
+  border-radius: 5px;
+}
+
+.host-van-card-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 17px;
+}
+
+.host-van-card-content-text p {
+  color: #4d4d4d;
+}
+.host-van-card-content-text h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
 /*** BUTTON ***/
 
 .btn {

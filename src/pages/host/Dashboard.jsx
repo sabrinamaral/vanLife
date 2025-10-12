@@ -1,4 +1,14 @@
+import HostVanCard from "../../components/HostVanCard";
+import { useContext } from "react";
+import { VansContext } from "../../main";
+
 export default function Dashboard() {
+  const { vans } = useContext(VansContext);
+  const hostVans = vans.filter((van) => van.id % 2 === 0);
+  const vanElement = hostVans.map((van) => (
+    <HostVanCard van={van} key={van.id} />
+  ));
+
   return (
     <div className="dashboard-main">
       <section className="dashboard-welcome">
@@ -11,14 +21,21 @@ export default function Dashboard() {
         </div>
         <p className="income-number">$2,260</p>
       </section>
-      <session className="dashboard-review-score">
+      <section className="dashboard-review-score">
         <p>
           Review score <img src="/images/reviewStar.svg"></img>
           <span className="score">5.0</span>
           <span>/5</span>
         </p>
         <a>Details</a>
-      </session>
+      </section>
+      <section className="host-vans-list">
+        <div className="host-listed-vans">
+          <h2>Your listed vans</h2>
+          <a>View all</a>
+        </div>
+        {vanElement}
+      </section>
     </div>
   );
 }
