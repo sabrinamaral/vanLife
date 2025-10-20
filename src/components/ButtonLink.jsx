@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-export default function ButtonLink({ children, url }) {
+export default function ButtonLink({ to, relative, children }) {
+  const navigate = useNavigate();
+
   return (
-    <Link to={url} className="btn-link">
+    <button onClick={() => navigate(to, { relative })} className="btn-link">
       {children}
-    </Link>
+    </button>
   );
 }

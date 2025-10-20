@@ -1,14 +1,7 @@
-import HostVanCard from "../../components/HostVanCard";
-import { useContext } from "react";
-import { VansContext } from "../../main";
+import HostVans from "./HostVans";
+import { Link } from "react-router-dom";
 
 export default function Dashboard() {
-  const { vans } = useContext(VansContext);
-  const hostVans = vans.filter((van) => van.id % 2 === 0);
-  const vanElement = hostVans.map((van) => (
-    <HostVanCard van={van} key={van.id} />
-  ));
-
   return (
     <div className="dashboard-main">
       <section className="dashboard-welcome">
@@ -29,12 +22,12 @@ export default function Dashboard() {
         </p>
         <a>Details</a>
       </section>
-      <section className="host-vans-list">
+      <section>
         <div className="host-listed-vans">
           <h2>Your listed vans</h2>
-          <a>View all</a>
+          <Link to="vans">View all</Link>
         </div>
-        {vanElement}
+        <HostVans />
       </section>
     </div>
   );

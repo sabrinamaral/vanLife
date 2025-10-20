@@ -2,27 +2,39 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./pages/About";
 import Dashboard from "./pages/host/Dashboard";
 import Home from "./pages/Home";
-import HostLayout from "./components/HostLayout";
+import HostVans from "./pages/host/HostVans";
+import HostVanDetail from "./pages/host/HostVanDetail";
 import Income from "./pages/host/Income";
-import Layout from "./components/Layout";
 import Reviews from "./pages/host/Reviews";
 import Vans from "./pages/vans/Vans";
 import VanDetail from "./pages/vans/VanDetail";
+import HostLayout from "./components/HostLayout";
+import Layout from "./components/Layout";
+import HostVansInfo from "./pages/host/HostVansInfo";
+import HostVansPricing from "./pages/host/HostVansPricing";
+import HostVansPhotos from "./pages/host/HostVansPhotos";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/vans" element={<Vans />} />
           <Route path="/vans/:id" element={<VanDetail />} />
 
           <Route path="/host" element={<HostLayout />}>
-            <Route path="" element={<Dashboard />} />
+            <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
             <Route path="reviews" element={<Reviews />} />
+            <Route path="vans" element={<HostVans />} />
+
+            <Route path="vans/:id" element={<HostVanDetail />}>
+              <Route index element={<HostVansInfo />} />
+              <Route path="pricing" element={<HostVansPricing />} />
+              <Route path="photos" element={<HostVansPhotos />} />
+            </Route>
           </Route>
         </Route>
       </Routes>
