@@ -1,3 +1,5 @@
+import ButtonLink from "./ButtonLink";
+
 export default function HostVanCard({ van }) {
   return (
     <div className="host-van-card">
@@ -7,7 +9,7 @@ export default function HostVanCard({ van }) {
           <h4>{van.name}</h4>
           <p>${van.price}/day</p>
         </div>
-        <a>Edit</a>
+        <ButtonLink>Edit</ButtonLink>
       </div>
     </div>
   );

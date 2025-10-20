@@ -1,9 +1,8 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import Button from "../../components/Button";
+import { Link, useParams } from "react-router-dom";
+import ButtonType from "../../components/ButtonType";
 import ButtonLink from "../../components/ButtonLink";
 import ButtonCta from "../../components/ButtonCta";
-import { colorTypes } from "../../constants/btnType";
 
 export default function VanDetail() {
   const params = useParams();
@@ -18,14 +17,10 @@ export default function VanDetail() {
   return (
     van && (
       <div className="van-detail">
-        <ButtonLink url={"/vans"}>{"<- Back to all vans "}</ButtonLink>
+        <ButtonLink to={"/vans"}>{"<- Back to all vans "}</ButtonLink>
+
         <img src={van.imageUrl} />
-        <Button
-          color={colorTypes[van.type]?.color}
-          backgroundColor={colorTypes[van.type]?.backgroundColor}
-        >
-          {van.type.charAt(0).toUpperCase() + van.type.slice(1)}
-        </Button>
+        <ButtonType type={van.type}>{van.type}</ButtonType>
         <h1>{van.name}</h1>
         <p className="price">
           ${van.price}
