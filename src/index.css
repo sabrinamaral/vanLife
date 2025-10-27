@@ -37,7 +37,6 @@ nav a {
 
 nav a:hover {
   color: #161616;
-  text-decoration: underline;
 }
 
 nav .logo {
@@ -449,6 +448,7 @@ nav.host-layout {
   padding: 7px 26px;
   border: none;
   border-radius: 5px;
+  background-color: #ffead0;
 }
 
 .btn-link {
@@ -456,6 +456,10 @@ nav.host-layout {
   border: none;
   color: #4d4d4d;
   margin-inline: 5px;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
 }
 
 .btn-cta {
@@ -469,6 +473,24 @@ nav.host-layout {
   margin-top: 20px;
   padding-block: 15px;
   border-radius: 5px;
+}
+
+.vans-filter button.btn.simple:hover,
+.simple {
+  color: #ffead0;
+  background-color: #e17654;
+}
+
+.vans-filter button.btn.luxury:hover,
+.luxury {
+  color: #ffead0;
+  background-color: #161616;
+}
+
+.vans-filter button.btn.rugged:hover,
+.rugged {
+  color: "#FFEAD0";
+  background-color: #115e59;
 }
 
 /*** FOOTER ***/
