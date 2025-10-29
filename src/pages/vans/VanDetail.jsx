@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import ButtonType from "../../components/ButtonType";
 import ButtonLink from "../../components/ButtonLink";
 import ButtonCta from "../../components/ButtonCta";
@@ -7,6 +7,7 @@ import ButtonCta from "../../components/ButtonCta";
 export default function VanDetail() {
   const params = useParams();
   const [van, setVan] = React.useState(null);
+  const location = useLocation();
 
   React.useEffect(() => {
     fetch(`/api/vans/${params.id}`)
@@ -17,7 +18,10 @@ export default function VanDetail() {
   return (
     van && (
       <div className="van-detail">
-        <ButtonLink to={"/vans"}>{"<- Back to all vans "}</ButtonLink>
+        {/* passing the searchParams through the state props from the Link that's wrapping the van individually */}
+        <ButtonLink to={`..${location?.state.search}`} relative={"path"}>
+          {`<- Back to ${location?.state.type || "all"} vans `}
+        </ButtonLink>
 
         <img src={van.imageUrl} />
         <ButtonType type={van.type}>{van.type}</ButtonType>

@@ -442,7 +442,7 @@ nav.host-layout {
   border-radius: 5px;
 }
 
-/*** BUTTON ***/
+/*** BUTTONS ***/
 
 .btn {
   padding: 7px 26px;
@@ -491,6 +491,22 @@ nav.host-layout {
 .rugged {
   color: "#FFEAD0";
   background-color: #115e59;
+}
+
+/*** NOT FOOUND ***/
+
+.not-found {
+  max-width: 500px;
+  padding: 100px 27px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.not-found a {
+  background-color: #161616;
+  margin-top: 50px;
 }
 
 /*** FOOTER ***/
