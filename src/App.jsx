@@ -5,14 +5,15 @@ import Home from "./pages/Home";
 import HostVans from "./pages/host/HostVans";
 import HostVanDetail from "./pages/host/HostVanDetail";
 import Income from "./pages/host/Income";
+import NotFound from "./pages/NotFound";
 import Reviews from "./pages/host/Reviews";
 import Vans from "./pages/vans/Vans";
 import VanDetail from "./pages/vans/VanDetail";
-import HostLayout from "./components/HostLayout";
-import Layout from "./components/Layout";
 import HostVansInfo from "./pages/host/HostVansInfo";
 import HostVansPricing from "./pages/host/HostVansPricing";
 import HostVansPhotos from "./pages/host/HostVansPhotos";
+import HostLayout from "./components/HostLayout";
+import Layout from "./components/Layout";
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
               <Route path="photos" element={<HostVansPhotos />} />
             </Route>
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
