@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import ButtonLink from "../../components/ButtonLink";
 import ButtonType from "../../components/ButtonType";
 import { VansContext } from "../../main";
 
@@ -17,7 +16,11 @@ export default function Van() {
 
   const vanElement = vanElements?.map((van) => {
     return (
-      <Link to={`/vans/${van.id}`} key={van.id}>
+      <Link
+        to={van.id}
+        key={van.id}
+        state={{ search: `?${searchParams.toString()}`, type: queryParams }}
+      >
         <div className="van-card">
           <img src={van.imageUrl} />
           <div className="van-info">
