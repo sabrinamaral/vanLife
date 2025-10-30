@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import ButtonType from "../../components/ButtonType";
 import { VansContext } from "../../main";
+import ButtonType from "../../components/ButtonType";
+import Loading from "../../components/Loading";
 
 export default function Van() {
-  const { vans } = useContext(VansContext);
+  const { vans, loading } = useContext(VansContext);
   const [searchParams, setSearchParams] = useSearchParams();
   const queryParams = searchParams.get("type");
 
@@ -45,6 +46,10 @@ export default function Van() {
       }
       return prevParams;
     });
+  }
+
+  if (loading) {
+    return <Loading />;
   }
 
   return (

@@ -1,19 +1,21 @@
-import React from "react";
+import { useContext } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import ButtonType from "../../components/ButtonType";
 import ButtonLink from "../../components/ButtonLink";
 import ButtonCta from "../../components/ButtonCta";
+import { VansContext } from "../../main";
+import Loading from "../../components/Loading";
 
 export default function VanDetail() {
+  const { vans, loading } = useContext(VansContext);
   const params = useParams();
-  const [van, setVan] = React.useState(null);
   const location = useLocation();
 
-  React.useEffect(() => {
-    fetch(`/api/vans/${params.id}`)
-      .then((res) => res.json())
-      .then((data) => setVan(data.vans));
-  }, [params.id]);
+  const van = vans.find((van) => van.id === params.id);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     van && (
