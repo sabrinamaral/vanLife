@@ -509,6 +509,34 @@ nav.host-layout {
   margin-top: 50px;
 }
 
+/*** LOADING ***/
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.spinner {
+  width: 150px;
+  height: 150px;
+  border: 5px solid #eee; /* Light background arc */
+  border-top: 5px solid #3498db; /* Colored arc */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /*** FOOTER ***/
 
 footer {
