@@ -3,14 +3,23 @@ import { VansContext } from "../main";
 
 export function VansProvider({ children }) {
   const [vans, setVans] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("/api/vans")
-      .then((response) => response.json())
-      .then((data) => setVans(data.vans));
+    async function getVans() {
+      setLoading(true);
+      const res = await fetch("/api/vans");
+      const data = await res.json();
+      setVans(data.vans);
+      setLoading(false);
+    }
+
+    getVans();
   }, []);
 
   return (
-    <VansContext.Provider value={{ vans }}>{children}</VansContext.Provider>
+    <VansContext.Provider value={{ vans, loading }}>
+      {children}
+    </VansContext.Provider>
   );
 }
