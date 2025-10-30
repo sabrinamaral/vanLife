@@ -1,18 +1,23 @@
-import { NavLink, Outlet, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
+import { NavLink, Outlet, useParams } from "react-router-dom";
 import { VansContext } from "../../main";
 import ButtonType from "../../components/ButtonType";
 import ButtonLink from "../../components/ButtonLink";
+import Loading from "../../components/Loading";
 
 export default function HostVanDetail() {
   const params = useParams();
-  const { vans } = useContext(VansContext);
+  const { vans, loading } = useContext(VansContext);
   const [currentVan, setCurrentVan] = useState();
 
   useEffect(() => {
     const elementVan = vans.find((van) => van.id === params.id);
     setCurrentVan(elementVan);
   }, [vans, params.id]);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   if (!currentVan) {
     return null;
