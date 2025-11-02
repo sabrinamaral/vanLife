@@ -5,9 +5,10 @@ import ButtonLink from "../../components/ButtonLink";
 import ButtonCta from "../../components/ButtonCta";
 import { VansContext } from "../../main";
 import Loading from "../../components/Loading";
+import Error from "../../components/Error";
 
 export default function VanDetail() {
-  const { vans, loading } = useContext(VansContext);
+  const { vans, loading, error } = useContext(VansContext);
   const params = useParams();
   const location = useLocation();
 
@@ -15,6 +16,10 @@ export default function VanDetail() {
 
   if (loading) {
     return <Loading />;
+  }
+
+  if (error) {
+    return <Error errorMessage={error} />;
   }
 
   return (

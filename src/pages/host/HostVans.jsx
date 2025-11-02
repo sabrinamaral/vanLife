@@ -3,10 +3,11 @@ import { useContext } from "react";
 import { VansContext } from "../../main";
 import HostVanCard from "../../components/HostVanCard";
 import Loading from "../../components/Loading";
+import Error from "../../components/Error";
 
 export default function HostVans() {
   const currentLocation = useLocation().pathname;
-  const { vans, loading } = useContext(VansContext);
+  const { vans, loading, error } = useContext(VansContext);
 
   const hostVans = vans.filter((van) => van.id % 2 === 0);
   const vanElement = hostVans.map((van) => (
@@ -17,6 +18,10 @@ export default function HostVans() {
 
   if (loading) {
     return <Loading />;
+  }
+
+  if (error) {
+    return <Error errorMessage={error} />;
   }
 
   return (
