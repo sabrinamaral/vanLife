@@ -4,10 +4,11 @@ import { VansContext } from "../../main";
 import ButtonType from "../../components/ButtonType";
 import ButtonLink from "../../components/ButtonLink";
 import Loading from "../../components/Loading";
+import Error from "../../components/Error";
 
 export default function HostVanDetail() {
   const params = useParams();
-  const { vans, loading } = useContext(VansContext);
+  const { vans, loading, error } = useContext(VansContext);
   const [currentVan, setCurrentVan] = useState();
 
   useEffect(() => {
@@ -17,6 +18,9 @@ export default function HostVanDetail() {
 
   if (loading) {
     return <Loading />;
+  }
+  if (error) {
+    return <Error errorMessage={error} />;
   }
 
   if (!currentVan) {

@@ -3,9 +3,10 @@ import { Link, useSearchParams } from "react-router-dom";
 import { VansContext } from "../../main";
 import ButtonType from "../../components/ButtonType";
 import Loading from "../../components/Loading";
+import Error from "../../components/Error";
 
 export default function Van() {
-  const { vans, loading } = useContext(VansContext);
+  const { vans, loading, error } = useContext(VansContext);
   const [searchParams, setSearchParams] = useSearchParams();
   const queryParams = searchParams.get("type");
 
@@ -50,6 +51,10 @@ export default function Van() {
 
   if (loading) {
     return <Loading />;
+  }
+
+  if (error) {
+    return <Error errorMessage={error} />;
   }
 
   return (
