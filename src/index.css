@@ -27,7 +27,8 @@ nav {
   margin: 0 auto;
 }
 
-nav a {
+nav a,
+.logout {
   margin-right: 13px;
   text-decoration: none;
   color: #4d4d4d;
@@ -512,14 +513,21 @@ nav.host-layout {
 
 /*** LOADING ***/
 /*** ERROR ***/
+/*** SIGN IN ***/
 
 .error-container,
-.spinner-container {
+.spinner-container,
+.signin-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   white-space: pre-line;
+}
+
+.error-message {
+  color: darkred;
+  font-size: 12px;
 }
 
 .spinner {
@@ -529,6 +537,72 @@ nav.host-layout {
   border-top: 5px solid #3498db; /* Colored arc */
   border-radius: 50%;
   animation: spin 1s linear infinite;
+}
+
+.signin-container h1 {
+  font-size: 1.8rem;
+  color: #161616;
+}
+
+.signin-container {
+  min-height: 50vh;
+  max-width: 500px;
+  flex-direction: column;
+  margin-inline: auto;
+}
+
+.signin-container .login-form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-block: 32px;
+
+  margin-inline: 27px;
+}
+.signin-container .login-form button {
+  background-color: #ff8c38;
+  color: #fff;
+  height: 55px;
+  border: none;
+  border-radius: 6px;
+  margin-top: 22px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.signin-container .login-form input {
+  height: 42px;
+  border: 1px solid #d1d5db;
+  padding-left: 10px;
+}
+.signin-container .login-form input:focus {
+  border: 1px solid #ff8c38;
+  outline: #ff8c38;
+}
+
+.signin-container .login-form input::placeholder {
+  color: #4d4d4d;
+  opacity: 0.8;
+}
+
+.signin-container .login-form input[type="email"] {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.signin-container .login-form input[type="password"] {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.signin-container p a {
+  color: #ff8c38;
+  font-weight: 600;
+}
+
+.logout {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 
 /* Animation */
