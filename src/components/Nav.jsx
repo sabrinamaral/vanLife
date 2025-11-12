@@ -1,6 +1,13 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 export default function Nav() {
+  const navigate = useNavigate();
+
+  function fakeLogOut() {
+    localStorage.removeItem("loggedin");
+    navigate("login");
+  }
+
   return (
     <nav>
       <Link to="/" className="logo">
@@ -25,6 +32,11 @@ export default function Nav() {
         >
           Vans
         </NavLink>
+        {localStorage.length !== 0 && (
+          <button onClick={fakeLogOut} className="logout">
+            Log out
+          </button>
+        )}
       </div>
     </nav>
   );
