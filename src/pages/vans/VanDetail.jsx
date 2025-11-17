@@ -30,7 +30,7 @@ export default function VanDetail() {
           {`<- Back to ${location?.state.type || "all"} vans `}
         </ButtonLink>
 
-        <img src={van.imageUrl} />
+        <img src={van.imageUrl} alt={van.name} />
         <ButtonType type={van.type}>{van.type}</ButtonType>
         <h1>{van.name}</h1>
         <p className="price">

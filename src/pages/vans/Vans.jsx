@@ -24,7 +24,7 @@ export default function Van() {
         state={{ search: `?${searchParams.toString()}`, type: queryParams }}
       >
         <div className="van-card">
-          <img src={van.imageUrl} />
+          <img src={van.imageUrl} alt={van.name} />
           <div className="van-info">
             <p>{van.name}</p>
             <p>
