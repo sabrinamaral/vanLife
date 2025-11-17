@@ -9,7 +9,7 @@ export default function HostVans() {
   const currentLocation = useLocation().pathname;
   const { vans, loading, error } = useContext(VansContext);
 
-  const hostVans = vans.filter((van) => van.id % 2 === 0);
+  const hostVans = vans.filter((van) => van.hostId === "789");
   const vanElement = hostVans.map((van) => (
     <Link to={`/host/vans/${van.id}`} key={van.id}>
       <HostVanCard van={van} />
