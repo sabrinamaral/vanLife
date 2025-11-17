@@ -16,7 +16,8 @@ export default function Dashboard() {
       </section>
       <section className="dashboard-review-score">
         <p>
-          Review score <img src="/images/reviewStar.svg"></img>
+          Review score{" "}
+          <img src="/images/reviewStar.svg" alt="star using on reviews"></img>
           <span className="score">5.0</span>
           <span>/5</span>
         </p>
